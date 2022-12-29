@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+/* This is resetting the default styles and also making the page responsive */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+html, body {
+    height: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button{
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1, h2, h3{
+    line-height: 1;
+}
+/* End of the resetting */
+
+body{
+    font-size: 1.4rem;
+    background-color: hsl(30, 38%, 92%);
+    line-height: 1.5;
+    /* to make the items centered horizontally and vertically */
+    display: grid;
+    place-content: center;
+    margin: 1.6rem;
+}
+
+/* To make the 2 prices stay side by side */
+.flex-group{
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.product {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.8rem;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+}
+
+/* rule to make the image switch to 2 columns at a specific width */
+@media (min-width: 600px){
+    .product{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product__content{
+    padding: 2.8rem;
+    display: grid;
+    gap: 1.6rem;
+}
+
+.product__category{
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+    color: hsl(228, 12%, 48%);
+}
+
+.product__title{
+    font-family: 'Fraunces', serif;
+    font-size: 3.2rem;
+    color: hsl(212, 21%, 14%);
+}
+
+.product__details{
+    color: hsl(228, 12%, 48%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product__price{
+    font-family: 'Fraunces', serif;
+    color: hsl(158, 36%, 37%);
+    font-size: 3rem;
+}
+
+.product__original-price{
+    text-decoration: line-through;
+    color: hsl(228, 12%, 48%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button{
+    background-color: hsl(158, 36%, 37%);
+    color: hsl(0, 0%, 100%);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 0.7rem ;
+    padding: 1.2rem 2.4rem;
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* :is is to group both states */
+.button:is(:hover, :focus){
+    background-color: hsl(158, 15%, 15%);
+}
+
+/* to but the button before the Add to Cart text */
+.button[data-icon="shopping-cart"]::before{
+    content: "";
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
