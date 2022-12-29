@@ -117,12 +117,12 @@ body{
     gap: 0.8rem;
 }
 
-/* :is is to group both states */
+/* :is is used to group both states */
 .button:is(:hover, :focus){
     background-color: hsl(158, 15%, 15%);
 }
 
-/* to but the button before the Add to Cart text */
+/* to put the button before the Add to Cart text */
 .button[data-icon="shopping-cart"]::before{
     content: "";
     background-image: url("images/icon-cart.svg");
